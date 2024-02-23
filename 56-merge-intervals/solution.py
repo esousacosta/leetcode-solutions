@@ -6,10 +6,10 @@ class Solution:
         
         output.append(intervals[0])
         
-        for i in range(1, len(intervals)):
-            if intervals[i][0] <= output[-1][1]:
-                output[-1] = [min(intervals[i][0], output[-1][0]), max(intervals[i][1], output[-1][1])]
+        for start, end in intervals[1:]:
+            if start <= output[-1][1]:
+                output[-1][1] = max(end, output[-1][1])
             else:
-                output.append(intervals[i])
+                output.append([start, end])
 
         return output
