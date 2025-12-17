@@ -16,9 +16,12 @@ class Solution {
         Map<String, List<String>> result = new HashMap<String, List<String>>();
 
         for (String str : strs) {
-            char[] temp = str.toCharArray();
-            Arrays.sort(temp);
-            String key = new String(temp);
+            char[] count = new char[26];
+            for (char c : str.toCharArray()) {
+                count[c - 'a']++;
+            }
+
+            String key = new String(count);
 
             result.computeIfAbsent(key, k -> new ArrayList<>())
                     .add(str);
