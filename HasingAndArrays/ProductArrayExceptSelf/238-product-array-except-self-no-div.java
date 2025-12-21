@@ -12,7 +12,7 @@ class Solution {
         // Right to left (suffix)
         int suffixProd = nums[nums.length - 1];
         for (int i = nums.length - 2; i >= 0; i--) {
-            output[i] = output[i] * suffixProd;
+            output[i] *= suffixProd;
             suffixProd *= nums[i];
         }
 
