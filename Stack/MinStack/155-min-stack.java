@@ -34,8 +34,6 @@ class MinStack {
 
         minIdx = ds.get(ds.size() - 1)[1];
         min = ds.get(minIdx)[0];
-
-        
     }
     
     public int top() {
